@@ -1,16 +1,35 @@
- <h1>Welcome to the Indicosmic Pvt Ltd.</h1>
+<h1>Welcome to the Indicosmic Pvt Ltd.</h1>
 <h2 style="text-align: center; background-color: aliceblue;">Example for the {{title}}</h2>
-<form [formGroup]="form" (ngSubmit)="onsubmit()">
-  <div formArrayName="ContactNos">
-    <div *ngFor="let contact of form.get('ContactNos').controls; let i = index">
-      <input type="text" [formControl]="getContactControl(i)" placeholder="contact No">
-    </div>
-  </div>
-  <button type="submit">Submit</button>
-</form>
-<button (click)="addContactNo()">Add new Field </button>
-<button (click)="setPreset()">Set preset</button>
+<table style="text-align: center;" border="2" class="table">
+  <tr align="center">
+    <td align="center">
+      <form [formGroup]="form" (ngSubmit)="onsubmit()">
+        <div formArrayName="ContactNos">
+          <div *ngFor="let contact of form.get('ContactNos').controls; let i = index"
+            style="align-items: center; text-align: center;">
+            <table align="center" >
+              <tr align="center">
+                <td colspan="2" align="center"><input style="width: auto; text-align: center;" type="text" [formControl]="getContactControl(i)"
+                    placeholder="Add new Field Name "></td>
 
+              </tr>
 
+              <!-- <tr>
+                <td><button type="submit">Submit</button></td>
 
+                <td><button (click)="addContactNo()">Add new Field </button></td>
+                <td><button (click)="setPreset()">Set preset</button></td>
+              </tr> -->
+            </table>
+          </div>
+        </div>
 
+      </form>
+    </td>
+  </tr>
+  <tr colspan="3">
+    <td><button type="submit">Submit</button> | 
+    <button (click)="addContactNo()">Add new Field </button> |
+    <button (click)="setPreset()">Set preset</button></td>
+  </tr>
+</table>
