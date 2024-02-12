@@ -1,0 +1,16 @@
+ <h1>Welcome to the Indicosmic Pvt Ltd.</h1>
+<h2 style="text-align: center; background-color: aliceblue;">Example for the {{title}}</h2>
+<form [formGroup]="form" (ngSubmit)="onsubmit()">
+  <div formArrayName="ContactNos">
+    <div *ngFor="let contact of form.get('ContactNos').controls; let i = index">
+      <input type="text" [formControl]="getContactControl(i)" placeholder="contact No">
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<button (click)="addContactNo()">Add new Field </button>
+<button (click)="setPreset()">Set preset</button>
+
+
+
+
